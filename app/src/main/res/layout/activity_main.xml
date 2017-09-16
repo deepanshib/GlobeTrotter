@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context="com.deepanshi.globetrotter.MainActivity">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appBarLayout">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#1a1a46">
+<ImageView
+    android:layout_width="30dp"
+    android:layout_height="wrap_content"
+    android:src="@drawable/logo"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:text="  GLOBETROTTER"
+                android:gravity="center"
+                android:textSize="20dp"
+               android:textStyle="bold"/>
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout"
+        android:layout_weight="1">
+        <ImageButton
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="#e77171"
+            android:id="@+id/bt1"
+            android:src="@drawable/poi"
+android:scaleType="fitCenter"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:id="@+id/bt3"
+            android:background="#e7d171"
+            android:src="@drawable/hotels"
+android:layout_weight="1"
+            android:scaleType="fitCenter"/>
+        <ImageButton
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="#e77171"
+            android:scaleType="fitCenter"
+android:id="@+id/bt5"
+            android:src="@drawable/weather"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="#71e7df"
+            android:scaleType="fitCenter"
+
+            android:src="@drawable/emergency"
+            android:layout_weight="1"/>
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout2"
+        android:layout_weight="1">
+        <ImageButton
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="#e18544"
+            android:id="@+id/bt2"
+            android:src="@drawable/restro"
+            android:scaleType="centerInside"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="#e77171"
+            android:src="@drawable/events"
+            android:scaleType="fitCenter"
+
+            android:layout_weight="1"/>
+        <ImageButton
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="#c6e771"
+            android:scaleType="centerInside"
+android:id="@+id/bt6"
+            android:src="@drawable/curr"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="#e77171"
+            android:scaleType="centerInside"
+
+            android:src="@drawable/doc"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

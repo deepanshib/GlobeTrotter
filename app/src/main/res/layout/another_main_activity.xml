@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#1a1a46">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:text="  GLOBETROTTER"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+    </android.support.v7.widget.Toolbar>
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#251b5f"
+        android:id="@+id/bt1"
+        android:src="@drawable/poi"
+        android:scaleType="fitStart"
+        android:layout_weight="1"/>
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#342879"
+        android:id="@+id/bt2"
+        android:src="@drawable/poi"
+        android:scaleType="fitStart"
+        android:layout_weight="1"/>
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#4c3e9c"
+        android:id="@+id/bt3"
+        android:src="@drawable/poi"
+        android:scaleType="fitStart"
+        android:layout_weight="1"/>
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#7969d6"
+        android:id="@+id/bt4"
+        android:src="@drawable/poi"
+        android:scaleType="fitStart"
+        android:layout_weight="1"/>
+</LinearLayout>
