@@ -1,5 +1,7 @@
 package com.deepanshi.globetrotter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,13 +22,15 @@ public class point_of_interest extends RecyclerView.Adapter<point_of_interest.Ca
     ArrayList<String> addr = new ArrayList<>();
     ArrayList<String> votes = new ArrayList<>();
     ArrayList<String> photo = new ArrayList<>();
-
-    public point_of_interest(ArrayList<String> names,ArrayList<String> addr,ArrayList<String> photo) {
+    ArrayList<String> placeid = new ArrayList<>();
+Context mactivity;
+    public point_of_interest(Context act,ArrayList<String> names, ArrayList<String> addr, ArrayList<String> photo, ArrayList<String> placeid) {
         this.names=names;
         this.addr=addr;
         this.votes=votes;
         this.photo=photo;
-
+this.mactivity=act;
+this.placeid=placeid;
     }
 
     @Override
@@ -37,11 +41,19 @@ public class point_of_interest extends RecyclerView.Adapter<point_of_interest.Ca
     }
 
     @Override
-    public void onBindViewHolder(point_of_interest.CardViewHolder holder, int position) {
+    public void onBindViewHolder(point_of_interest.CardViewHolder holder, final int position) {
         holder.setText(position);
 
-//      holder.telephone.setText(places.get(position).getPhoneNumber().toString());
-//        holder.website.setText((CharSequence) places.get(position).getWebsiteUri().toString());
+        holder.name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mactivity, poiPage.class);
+                intent.putExtra("name",names.get(position));
+                intent.putExtra("placeid",placeid.get(position));
+
+                mactivity.startActivity(intent);
+            }
+        });
     }
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
@@ -52,6 +64,9 @@ public class point_of_interest extends RecyclerView.Adapter<point_of_interest.Ca
     public int getItemCount() {
         return names.size();
     }
+
+
+
     public class CardViewHolder extends RecyclerView.ViewHolder {
         TextView name, address,vote;
         ImageView img;
@@ -65,9 +80,6 @@ public class point_of_interest extends RecyclerView.Adapter<point_of_interest.Ca
         public void setText(int position) {
             name.setText(names.get(position));
             address.setText(addr.get(position));
-//            Picasso.with(img.getContext())
-//                    .load(photo.get(position))
-//                    .resize(50,50).into(img);
 
         }
     }

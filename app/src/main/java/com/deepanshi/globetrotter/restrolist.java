@@ -1,7 +1,7 @@
 package com.deepanshi.globetrotter;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.location.Location;
+
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,33 +9,31 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.gms.location.places.Place;
-import com.google.android.gms.maps.model.LatLng;
 import com.squareup.picasso.Picasso;
 
-import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 
-import static android.R.attr.height;
-import static android.R.attr.width;
-import static android.R.id.list;
-/**
- * Created by Deepanshi Bansal on 06-08-2017.
- */
 public class restrolist extends RecyclerView.Adapter<restrolist.CardViewHolder>  {
     ArrayList<String> names = new ArrayList<>();
     ArrayList<String> addr = new ArrayList<>();
     ArrayList<String> votes = new ArrayList<>();
+    ArrayList<String> votes2 = new ArrayList<>();
+    ArrayList<String> cuisine = new ArrayList<>();
+    ArrayList<String> cost = new ArrayList<>();
+    ArrayList<String> currency = new ArrayList<>();
     ArrayList<String> photo = new ArrayList<>();
 
-    public restrolist(ArrayList<String> names,ArrayList<String> addr,ArrayList<String> votes,ArrayList<String> photo) {
+  Context mactivity;
+    public restrolist(Context act, ArrayList<String> names, ArrayList<String> addr, ArrayList<String> votes, ArrayList<String> photo,ArrayList<String> votes2,ArrayList<String> cuisine,ArrayList<String> cost,ArrayList<String> currency) {
         this.names=names;
         this.addr=addr;
         this.votes=votes;
         this.photo=photo;
-
+        mactivity=act;
+        this.votes2=votes2;
+this.cuisine=cuisine;
+this.cost=cost;
+this.currency=currency;
     }
 
     @Override
@@ -46,11 +44,29 @@ public class restrolist extends RecyclerView.Adapter<restrolist.CardViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(CardViewHolder holder, int position) {
+    public void onBindViewHolder(CardViewHolder holder, final int position) {
         holder.setText(position);
 
 //      holder.telephone.setText(places.get(position).getPhoneNumber().toString());
 //        holder.website.setText((CharSequence) places.get(position).getWebsiteUri().toString());
+
+        holder.name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(mactivity, individualpage.class);
+                intent.putExtra("name",names.get(position));
+                intent.putExtra("address",addr.get(position));
+                intent.putExtra("rating",votes.get(position));
+                intent.putExtra("review",votes2.get(position));
+                intent.putExtra("photo",photo.get(position));
+                intent.putExtra("cuisine",cuisine.get(position));
+                intent.putExtra("cost",cost.get(position));
+                intent.putExtra("currency",currency.get(position));
+
+                mactivity.startActivity(intent);
+            }
+        });
     }
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
@@ -61,6 +77,10 @@ public class restrolist extends RecyclerView.Adapter<restrolist.CardViewHolder> 
     public int getItemCount() {
         return names.size();
     }
+
+
+
+
     public class CardViewHolder extends RecyclerView.ViewHolder {
         TextView name, address,vote;
         ImageView img;
@@ -71,15 +91,23 @@ public class restrolist extends RecyclerView.Adapter<restrolist.CardViewHolder> 
             vote = (TextView) itemView.findViewById(R.id.votes);
             img=itemView.findViewById(R.id.imageView);
         }
+
         public void setText(int position) {
             name.setText(names.get(position));
             address.setText(addr.get(position));
             vote.setText(votes.get(position));
-//            Picasso.with(img.getContext())
-//                    .load(photo.get(position))
-//                    .resize(50,50).into(img);
+            if(photo.get(position).equals("")){
+                img.setImageResource( R.drawable.restro);
+
+            }
+            else {
+                Picasso.with(img.getContext())
+                        .load(photo.get(position))
+                        .resize(200, 200).into(img);
+            }
 
         }
-        }
+
+    }
     }
 

@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#080d2a"
-    android:orientation="vertical"
-    tools:context="com.deepanshi.globetrotter.currencyconvertr">
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical">
 
     <ProgressBar
         android:id="@+id/progressBar"
         android:visibility="gone"
+        android:layout_gravity="center"
+        android:indeterminateTint="#fff"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,138 +21,168 @@
         android:layout_centerHorizontal="true" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_weight="1">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:id="@+id/linearLayout2">
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/progressBar"
-        android:layout_marginTop="34dp"
-        android:layout_weight="1"
-        android:inputType="number"
-        android:hint="Enter USD amt" />
-<ImageView
-    android:layout_width="50dp"
-    android:layout_height="40dp"
-    android:layout_marginTop="34dp"
-android:layout_weight="1"
-    android:src="@drawable/arrow"/>
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginTop="34dp"
-        android:layout_alignBottom="@+id/editText"
-        android:layout_alignParentStart="true"
-        android:layout_weight="1" />
-</LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/text1"
-            android:layout_width="257dp"
-            android:layout_height="80dp"
-            android:layout_alignTop="@+id/imageView2"
-            android:layout_marginTop="28dp"
-            android:layout_toStartOf="@+id/imageView2"
-            android:padding="10dp"
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-android:gravity="center"
-            android:textSize="20dp"
-            android:text="Result...Conversion of USD to any other currency"
-            android:textColor="#fff" />
-
-        <!--<ImageView-->
-            <!--android:id="@+id/imageView2"-->
-            <!--android:layout_width="50dp"-->
-            <!--android:layout_height="80dp"-->
-            <!--android:layout_alignParentEnd="true"-->
-            <!--android:layout_below="@+id/linearLayout2"-->
-            <!--android:layout_marginEnd="31dp"-->
-            <!--android:layout_marginTop="20dp"-->
-            <!--android:src="@drawable/calc" />-->
-    </LinearLayout>
-    </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#000"
-        android:layout_below="@+id/progressBar" />
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_weight="1">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/linearLayout3">
-
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/progressBar"
-            android:layout_marginTop="34dp"
-            android:layout_weight="1"
-            android:inputType="number"
-            android:hint="Enter amt" />
-        <Spinner
-            android:id="@+id/spinner2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="34dp"
-            android:layout_alignBottom="@+id/editText"
-            android:layout_alignParentStart="true"
-            android:layout_weight="1" >
+            android:orientation="vertical"
+            android:layout_margin="30dp"
+            app:cardCornerRadius="10dp"
+            android:layout_gravity="center"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#4db675"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:textColor="#14311d"
+                    android:paddingTop="20dp"
+                    android:textStyle="bold"
+                    android:text="Enter USD amount"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/linearLayout2">
 
-        </Spinner>
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="34dp"
-            android:layout_weight="1"
-            android:src="@drawable/arrow"/>
-        <TextView
-            android:layout_width="wrap_content"
+                    <EditText
+                        android:id="@+id/editText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/progressBar"
+                        android:layout_marginTop="34dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#14311d"
+                        android:textColorHint="#000"
+                        android:textColor="#000"
+                        android:inputType="number"
+                        android:hint="Enter USD amt" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:background="@color/colorAccent"
+                    android:layout_marginTop="20dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
+                        android:layout_alignTop="@+id/imageView2"
+                        android:layout_toStartOf="@+id/imageView2"
+                        android:padding="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:text="0 "
+                        android:textColor="#fff" />
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:foregroundTint="#fff"
+                        android:backgroundTint="#fff"
+                        android:layout_alignBottom="@+id/editText"
+                        android:layout_alignParentStart="true"
+                        android:layout_weight="1"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="USD"
-            android:textSize="20dp"
-            android:textColor="#fff"
-            android:layout_marginTop="34dp"
-            android:layout_weight="1"/>
-        </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    <TextView
-        android:id="@+id/text2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:padding="10dp"
-        android:layout_weight="1"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:gravity="center"
-        android:textSize="20dp"
-        android:text="Result...Conversion of any currency to USD"
-        android:textColor="#fff" />
+            android:layout_margin="30dp"
+            app:cardCornerRadius="10dp"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#4db675"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:textColor="#14311d"
+                    android:paddingTop="20dp"
+                    android:textStyle="bold"
+                    android:text="Enter amount and currency to convert to USD"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/linearLayout3">
+
+                    <EditText
+                        android:id="@+id/editText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/progressBar"
+                        android:layout_marginTop="34dp"
+                        android:textColorHint="#000"
+                        android:backgroundTint="#14311d"
+                        android:layout_weight="1"
+                        android:textColor="#000"
+                        android:inputType="number"
+                        android:hint="Enter amt" />
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="USD"-->
+                        <!--android:textSize="20dp"-->
+                        <!--android:textColor="#000"-->
+                        <!--android:layout_marginTop="34dp"-->
+                        <!--android:layout_weight="1"/>-->
+                    <Spinner
+                        android:id="@+id/spinner2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="34dp"
+                        android:backgroundTint="#000"
+                      android:layout_alignBottom="@+id/editText"
+                        android:layout_alignParentStart="true"
+                        android:layout_weight="1" >
+
+                    </Spinner>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/text2"
+                        android:layout_width="match_parent"
+                        android:layout_height="80sp"
+                        android:padding="10dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:textSize="20dp"
+                        android:text="0 USD"
+                        android:textStyle="bold"
+                        android:textColor="#fff" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
     </LinearLayout>
-</LinearLayout>
 </LinearLayout>

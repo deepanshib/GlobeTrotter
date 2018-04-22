@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#fff"
+
+    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.deepanshi.globetrotter.individualpage">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:id="@+id/image" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginLeft="20sp"
+    android:layout_marginRight="20sp"
+    android:layout_marginTop="20sp"
+    android:background="@color/colorAccent"
+  >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+android:padding="20sp"
+        android:id="@+id/name"
+        android:text="URBAN KARAHI"
+        android:textAllCaps="true"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:id="@+id/address"
+        android:textColor="@color/colorPrimaryDark"
+
+        android:padding="20sp"
+        android:text="address"
+       />
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:padding="20sp">
+    <ImageView
+        android:layout_width="80sp"
+        android:layout_height="60sp"
+        android:src="@drawable/rating"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:text="DESCRIPTION"
+        android:padding="20sp"
+        android:textColor="#000"
+        android:id="@+id/rating"
+        android:textSize="18sp"
+        android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:text="DESCRIPTION"
+            android:textSize="18sp"
+android:textColor="#000"
+            android:id="@+id/review"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:padding="20sp">
+        <ImageView
+            android:layout_width="80sp"
+            android:layout_height="60sp"
+            android:src="@drawable/costlogo"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:text="DESCRIPTION"
+            android:padding="20sp"
+            android:textColor="#000"
+            android:id="@+id/cost"
+            android:textSize="18sp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:padding="20sp">
+        <ImageView
+            android:layout_width="80sp"
+            android:layout_height="60sp"
+            android:src="@drawable/cuisinelogo"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:text="DESCRIPTION"
+            android:padding="20sp"
+            android:textColor="#000"
+            android:id="@+id/cuisin"
+            android:textSize="18sp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>

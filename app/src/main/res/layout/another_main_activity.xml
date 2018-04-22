@@ -10,7 +10,7 @@
         <ImageView
             android:layout_width="30dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/logo"/>
+            android:src="@mipmap/ic_launcher_round"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,15 +26,18 @@
         android:layout_height="200dp"
         android:background="#251b5f"
         android:id="@+id/bt1"
-        android:src="@drawable/poi"
+        android:src="@drawable/weather"
         android:scaleType="fitStart"
-        android:layout_weight="1"/>
+        android:textAlignment="center"
+        android:layout_weight="1">
+
+    </ImageButton>
     <ImageButton
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="#342879"
         android:id="@+id/bt2"
-        android:src="@drawable/poi"
+        android:src="@drawable/restro"
         android:scaleType="fitStart"
         android:layout_weight="1"/>
     <ImageButton
@@ -42,6 +45,7 @@
         android:layout_height="200dp"
         android:background="#4c3e9c"
         android:id="@+id/bt3"
+        android:paddingLeft="40dp"
         android:src="@drawable/poi"
         android:scaleType="fitStart"
         android:layout_weight="1"/>
@@ -50,7 +54,7 @@
         android:layout_height="200dp"
         android:background="#7969d6"
         android:id="@+id/bt4"
-        android:src="@drawable/poi"
+        android:src="@drawable/events"
         android:scaleType="fitStart"
         android:layout_weight="1"/>
 </LinearLayout>

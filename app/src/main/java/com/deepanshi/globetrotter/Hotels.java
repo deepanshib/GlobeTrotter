@@ -37,7 +37,7 @@ public class Hotels extends AppCompatActivity {
     private ArrayList<String> photos = new ArrayList<>();
     private ArrayList<String> placeIds = new ArrayList<>();
 
-    point_of_interest adapter = new point_of_interest(names,addr,photos);
+    point_of_interest adapter = new point_of_interest(Hotels.this,names,addr,photos,placeIds);
     ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

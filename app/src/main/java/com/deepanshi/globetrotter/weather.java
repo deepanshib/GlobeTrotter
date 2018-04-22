@@ -128,11 +128,11 @@ public class weather extends AppCompatActivity {
                 String minT = json.getString("temp_min");
                 double minmin = Double.parseDouble(minT);
                 minmin = minmin - 273.15;
-                min.setText("Min. Temp.: \n" + minmin + " C");
+                min.setText("Min. Temp.: " + minmin + " C");
                 String maxT = json.getString("temp_max");
                 double maxmax = Double.parseDouble(maxT);
                 maxmax = maxmax - 273.15;
-                max.setText("Max. Temp.: \n" + maxmax + " C");
+                max.setText("Max. Temp.: " + maxmax + " C");
                 JSONObject json2 = jsonObj.getJSONObject("sys");
                 String country = json2.getString("country");
                 c.setText(country);

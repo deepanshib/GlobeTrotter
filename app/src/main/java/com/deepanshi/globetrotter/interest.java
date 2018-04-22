@@ -40,7 +40,7 @@ public class interest extends AppCompatActivity {
     private ArrayList<String> photos = new ArrayList<>();
     private ArrayList<String> placeIds = new ArrayList<>();
 
-    point_of_interest adapter = new point_of_interest(names,addr,photos);
+    point_of_interest adapter = new point_of_interest(interest.this,names,addr,photos,placeIds);
     ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +65,6 @@ public class interest extends AppCompatActivity {
             public void onLocationChanged(Location location) {
                 clat = location.getLatitude();
                 clong = location.getLongitude();
-                Toast.makeText(getApplicationContext(),"latitude-"+clat+" and longitude"+clong,Toast.LENGTH_LONG).show();
                 new interest.RetrieveFeedTask().execute();
             }
 
@@ -108,7 +107,7 @@ public class interest extends AppCompatActivity {
         protected String doInBackground(Void... urls) {
             // Do some validation here
             try {
-                String urlls="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+clat+","+clong+"&radius=15000&type=zoo|amusement_park|museum|shopping_mall&key=AIzaSyCo2CGB-Z0Z7B_7tQ9CO14H3D4AZpI1AFA\n";
+                String urlls="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+clat+","+clong+"&radius=1500&type=shopping_mall&rating&keyword=best&key=AIzaSyDcNAhFsG8olP2zpUffRJgiUJ7avMsRPCQ\n";
                 URL url = new URL(urlls);
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                 try {
@@ -152,6 +151,7 @@ public class interest extends AppCompatActivity {
 //                    photos.add(photo);
                     String address = json.getString("vicinity");
                     addr.add(address);
+
 //              JSONObject json2 = json.getJSONObject("photos");
 //         String photo = json2.getString("photo_reference");
 //                    photos.add("https://maps.googleapis.com/maps/api/place/photo?maxwidth=50&photoreference="+photo+"&key=AIzaSyCo2CGB-Z0Z7B_7tQ9CO14H3D4AZpI1AFA");

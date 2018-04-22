@@ -37,13 +37,6 @@ ImageButton restro,currency,tourist,wea,hotel;
 
     }
     public void onClick(View v){
-        LinearLayout linearLayout=(LinearLayout)findViewById(R.id.linearLayout);
-
-        Animation animm = AnimationUtils.loadAnimation(this, R.anim.slideleft);
-        linearLayout.startAnimation(animm);
-        LinearLayout linearLayout2=(LinearLayout)findViewById(R.id.linearLayout2);
-        Animation animm2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slideright);
-        linearLayout2.startAnimation(animm2);
 
         switch(v.getId()){
             case R.id.bt1:

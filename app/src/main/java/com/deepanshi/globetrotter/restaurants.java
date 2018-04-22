@@ -1,6 +1,5 @@
 package com.deepanshi.globetrotter;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
@@ -30,7 +29,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class restaurants extends AppCompatActivity {
+public class restaurants extends AppCompatActivity  {
     private static final int PERMISSION_REQUEST_CODE = 100;
     Double clong = 0.0, clat = 0.0;
     LocationManager locate;
@@ -38,8 +37,14 @@ public class restaurants extends AppCompatActivity {
     private ArrayList<String> names = new ArrayList<>();
     private ArrayList<String> addr = new ArrayList<>();
     private ArrayList<String> votes = new ArrayList<>();
+    private ArrayList<String> votes2 = new ArrayList<>();
+    private ArrayList<String> cuisines = new ArrayList<>();
+    private ArrayList<String> cost = new ArrayList<>();
+    private ArrayList<String> curr = new ArrayList<>();
+
+
     private ArrayList<String> photo = new ArrayList<>();
-    restrolist adapter = new restrolist(names, addr, votes, photo);
+    restrolist adapter = new restrolist(restaurants.this,names, addr, votes, photo,votes2,cuisines,cost,curr);
     ProgressBar progressBar;
 
     @Override
@@ -98,7 +103,6 @@ public class restaurants extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
     class RetrieveFeedTask extends AsyncTask<Void, Void, String> {
 
         private Exception exception;
@@ -110,7 +114,7 @@ public class restaurants extends AppCompatActivity {
         protected String doInBackground(Void... urls) {
             // Do some validation here
             try {
-                URL url = new URL("https://developers.zomato.com/api/v2.1/search?count=15&lat=" + clat + "&lon=" + clong + "&radius=10000&sort=real_distance&order=asc&apikey=85867108041a209beb00e7a238045192");
+                URL url = new URL("https://developers.zomato.com/api/v2.1/search?count=15&lat=" + clat + "&lon=" + clong + "&radius=5000&sort=real_distance&order=asc&apikey=85867108041a209beb00e7a238045192");
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                 try {
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
@@ -151,21 +155,24 @@ public class restaurants extends AppCompatActivity {
                     addr.add(address);
                     String name = json2.getString("name");
                     names.add(name);
-                    String photos = json2.getString("thumb");
+                    String photos = json2.getString("featured_image");
                     photo.add(photos);
-                    if(photo==null){
-//                        photo.add(R.drawable.events);
-                    }
+                    String cuisine = json2.getString("cuisines");
+cuisines.add(cuisine);
+                    String costs = json2.getString("average_cost_for_two");
+                    cost.add(costs);
+                    String currency = json2.getString("currency");
+                    curr.add(currency);
                     JSONObject json4 = json2.getJSONObject("user_rating");
-                    String vote = json4.getString("votes");
+                    String vote = json4.getString("aggregate_rating");
+                    String vote2 = json4.getString("rating_text");
+
                     votes.add(vote);
+                    votes2.add(vote2);
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-//            for(int i=0;i<names.size();i++)
-//            tv1.append(names.get(i)+"\n"+addr.get(i)+"\n\n");
-
         }
     }
 }
